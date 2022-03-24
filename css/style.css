@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-color: #383838;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.noVisibility {
+  display: none;
+}
+
+.visibility {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */
