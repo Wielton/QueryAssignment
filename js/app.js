@@ -11,25 +11,26 @@ You must show each method by changing the page somehow! Not simply console.log a
 */
 
 
-const player1Button = document.querySelector('#player1-btn');
-const player2Button = document.querySelector('#player2-btn');
-const player1Display = document.querySelector('#player1-display');
-const player2Display = document.querySelector('#player2-display');
-let btn = document.getElementById('div1').querySelector('button');
+const player1Button = document.getElementById('player1-btn');
+const player2Button = document.getElementById('player2-btn');
+const player1Display = document.getElementById('player1-display');
+const player2Display = document.getElementById('player2-display');
+let btn = document.getElementById('div1').querySelectorAll('button');
 console.log(btn);
-btn.classList.add('div1-btns');
 
 
 
-let displayBoard = document.getElementById('div1').querySelector('span');
+
+let displayBoard = document.getElementById('div1').querySelectorAll('span');
 console.log(displayBoard);
+
 
 let headerClass = document.getElementById('div1').querySelector('h1');
 console.log(headerClass);
 headerClass.classList.add('h1-tag');
 
-let retrievedByClassName = document.getElementsByClassName('div1-btns');
-console.log(retrievedByClassName);
+
+
 
 
 
@@ -59,6 +60,7 @@ function elReset(){
     let remP = document.getElementById('newElBlock').querySelector('p');
     remP.classList.remove('visibility');
     remP.classList.toggle('noVisibility', true);
+    
 }
 //  Now I will make the click function add 1 to the score of the corresponding player
 //  and set my score values
@@ -80,22 +82,23 @@ function p1Score() {
         isGameOver = true;
     }
 }
-
-player2Button.addEventListener('click', function() {
+function p2Score() {
     if(player2Score !== winningScore) {
         player2Score += 1;
         player2Display.textContent = player2Score;
-    } else {
+        
+    } else{
         isGameOver = true;
     }
-    
-})
+}
 
-scoreReset.addEventListener('click', function() {
+
+
+function resetScore() {
     isGameOver = false;
     player1Score = 0;
     player1Display.textContent = player1Score;
     player2Score = 0;
     player2Display.textContent = player2Score;
     console.log('The score has been reset');
-})
+}
